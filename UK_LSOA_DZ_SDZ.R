@@ -116,7 +116,7 @@ UK_LSOA_DZ_SDZ <- combine_chunk_gpkgs("./data/LSOA_DZ_SDZ/")
 
 EW <- st_read("https://services1.arcgis.com/ESMARspQHYMw9BZ9/arcgis/rest/services/OA_LSOA_MSOA_EW_DEC_2021_LU_v3/FeatureServer/0/query?outFields=*&where=1%3D1&f=geojson")
 
-EW %>%
+EW %<>%
   st_drop_geometry() %>%
   rename(OA = OA21CD,
          geography_code = LSOA21CD) %>%
